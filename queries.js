@@ -59,6 +59,7 @@ var updatePhelpsMemorial = function() {
 		if(listing.address != 'Phelps Lab, Gainesville FL 32611-6350') {
 			console.log('\nPhelps Lab Found:\n' + listing + '\n\n');
 
+			//Had trouble finding address. Had to use address from professors found here http://www.cep.ees.ufl.edu/emergy/index.shtml
 			listing.address = 'Phelps Lab, Gainesville FL 32611-6350';
 
 			listing.save(function(err) {
