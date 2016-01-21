@@ -13,8 +13,8 @@ var fs = require('fs'),
 /* Connect to your database */
 //var MongoClient = require('mongodb').MongoClient;
 
-//MongoClient.connect('mongodb://Correia:passAA7word@ds047355.mongolab.com:47355/correiasettleassignment3');
-mongoose.connect('mongodb://test:test@ds047355.mongolab.com:47355/cen_bootcamp');
+
+mongoose.connect(config.db.uri);
 
 //console.log(listings.length);
 
