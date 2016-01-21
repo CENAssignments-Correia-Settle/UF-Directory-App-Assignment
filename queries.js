@@ -51,7 +51,34 @@ var updatePhelpsMemorial = function() {
     Phelps Memorial Hospital Center's address is incorrect. Find the listing, update it, and then 
     log the updated document to the console. 
    */
+
+  Listing.findOne({code: 'PHL'}, function(err, listing) {
+    if (err) throw err;
+    else{
+
+		if(listing.address != 'Phelps Lab, Gainesville FL 32611-6350') {
+			console.log('\nPhelps Lab Found:\n' + listing + '\n\n');
+
+			listing.address = 'Phelps Lab, Gainesville FL 32611-6350';
+
+			listing.save(function(err) {
+				if (err) throw err;
+
+				console.log('Phelps Lab Address Updated')
+			})			
+
+			console.log('\nPhelps Lab Found:\n' + listing + '\n\n');
+
+		}
+		else if (!listing) 
+			console.log('\nPhelps Lab Not Found:\n');
+		else
+			console.log('\nPhelps Lab Already Updated:\n' + listing + '\n');
+	}
+    
+   });
 };
+
 var retrieveAllListings = function() {
   /* 
     Retrieve all listings in the database, and log them to the console. 
