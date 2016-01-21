@@ -56,6 +56,13 @@ var retrieveAllListings = function() {
   /* 
     Retrieve all listings in the database, and log them to the console. 
    */
+
+   Listing.find({}, function(err, listings) {
+   		if (err) throw err;
+
+   		console.log(listings);
+   });
+
 };
 
 findLibraryWest();
